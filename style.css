@@ -1,0 +1,566 @@
+body{
+    background-color: rgb(82, 92, 129);
+}
+
+
+
+.sparkles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.5);
+  animation: sparkleMove 5s linear infinite, sparkleFlash 1.5s ease-in-out infinite;
+}
+
+/* Random positions & delays */
+.sparkle:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.sparkle:nth-child(2) { top: 20%; left: 75%; animation-delay: 1s; }
+.sparkle:nth-child(3) { top: 30%; left: 40%; animation-delay: 0.5s; }
+.sparkle:nth-child(4) { top: 50%; left: 60%; animation-delay: 2s; }
+.sparkle:nth-child(5) { top: 70%; left: 25%; animation-delay: 1.2s; }
+.sparkle:nth-child(6) { top: 15%; left: 85%; animation-delay: 2.5s; }
+.sparkle:nth-child(7) { top: 80%; left: 45%; animation-delay: 3s; }
+.sparkle:nth-child(8) { top: 35%; left: 10%; animation-delay: 0.8s; }
+.sparkle:nth-child(9) { top: 60%; left: 90%; animation-delay: 1.6s; }
+.sparkle:nth-child(10) { top: 5%; left: 50%; animation-delay: 2.8s; }
+
+/* Sparkle Movement */
+@keyframes sparkleMove {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translateY(100px);
+    opacity: 0;
+  }
+}
+
+/* Twinkle/Flash */
+@keyframes sparkleFlash {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+
+/* 🌟 Magical Floating Stars */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.8);
+  animation: starFloat 6s ease-in-out infinite, starPulse 2s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+/* Random star positions and delays */
+.star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.star:nth-child(2) { top: 30%; left: 60%; animation-delay: 1s; }
+.star:nth-child(3) { top: 50%; left: 40%; animation-delay: 2s; }
+.star:nth-child(4) { top: 70%; left: 80%; animation-delay: 0.5s; }
+.star:nth-child(5) { top: 20%; left: 85%; animation-delay: 1.5s; }
+.star:nth-child(6) { top: 60%; left: 15%; animation-delay: 2.5s; }
+.star:nth-child(7) { top: 80%; left: 50%; animation-delay: 0.2s; }
+.star:nth-child(8) { top: 35%; left: 30%; animation-delay: 1.8s; }
+
+/* Floating up and down */
+@keyframes starFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.3);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* Glowing pulse effect */
+@keyframes starPulse {
+  0%, 100% {
+    opacity: 0.5;
+    box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 16px 8px rgba(255, 255, 255, 0.9);
+  }
+}
+
+
+/* 🎈 Balloons Container */
+/* 🎈 Balloons Container */
+.balloons {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* 🎈 Balloon Style */
+.balloon {
+ position:fixed;
+  width: 70px;
+  height: 80px;
+  background-color: rgb(192, 125, 125);
+  border-radius: 50% 50% 50% 50%;
+  animation: balloonFloat 8s linear infinite;
+  
+}
+
+.balloon::after {
+  content:'';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background-color: #444;
+  transform: translateX(-50%);
+}
+
+/* Individual Balloons: color + position + delay */
+.balloon.red    { left: 10%; background-color: #ea0808; animation-delay: 0s; }
+
+.balloon.darkblue  { left: 15%; background-color: #dcc3e6; animation-delay: 3s; }
+.balloon.brown  { left: 20%; background-color: #ef8c4f; animation-delay: 5s; }
+.balloon.blue   { left: 82%; background-color: #4da6ff; animation-delay: 1s; }
+.balloon.coral  { left: 60%; background-color: #c21078; animation-delay: 5s; }
+.balloon.green  { left: 22%; background-color: #bfdfbf; animation-delay: 3s; }
+.balloon.yellow { left: 70%; background-color: #fff94d; animation-delay: 3s; }
+.balloon.lightgreen { left: 80%; background-color: #4fcf6f; animation-delay: 5s; }
+.balloon.purple { left: 90%; background-color: #d24dff; animation-delay: 1.5s; }
+
+
+/* 🎈 Balloon Float Animation */
+@keyframes balloonFloat {
+  0% {
+    bottom: -60px;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(10px) rotate(4deg);
+  }
+  100% {
+    bottom: 110%;
+    transform: translateX(-10px) rotate(-4deg);
+    opacity: 0;
+  }
+}
+
+
+/* 🎊 Fullscreen Confetti Blaster */
+/* 🎊 Massive Confetti Blaster */
+.confetti-blast {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 25px;
+  border-radius: 2px;
+  animation: confettiFall 6s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+/* 🎨 Confetti Colors */
+.confetti.red    { background: #ea7e7e; }
+.confetti.blue   { background: #94bce4; }
+.confetti.yellow { background: #e0e077; }
+.confetti.green  { background: #58d458; }
+.confetti.purple { background: #b55ae2; }
+.confetti.pink   { background: #e3549b; }
+.confetti.orange { background: #e07c4b; }
+.confetti.gold   { background: #e0ce68; }
+.confetti.teal   { background: #8fe6e6; }
+
+/* 🎇 Keyframe for Falling Confetti */
+@keyframes confettiFall {
+  0% {
+    top: -10%;
+    left: calc(50% + (random * 50vw)); /* fallback */
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    left: calc(50% + (random * 50vw)); /* fallback */
+    transform: rotate(720deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* 🎲 Random Positions */
+.confetti:nth-child(1)  { left: 5%;  animation-delay: 0s; }
+.confetti:nth-child(2)  { left: 6%; animation-delay: 0.2s; }
+.confetti:nth-child(3)  { left: 7%; animation-delay: 0.4s; }
+.confetti:nth-child(4)  { left: 8%; animation-delay: 0.6s; }
+.confetti:nth-child(5)  { left: 9%; animation-delay: 0.8s; }
+.confetti:nth-child(6)  { left: 10%; animation-delay: 0.2s; }
+.confetti:nth-child(7)  { left: 11%; animation-delay: 0.5s; }
+.confetti:nth-child(8)  { left: 14%; animation-delay: 0.8s; }
+.confetti:nth-child(9)  { left: 20%; animation-delay: 1.1s; }
+.confetti:nth-child(10) { left: 24%; animation-delay: 1.4s; }
+.confetti:nth-child(11) { left: 29%; animation-delay: 0.1s; }
+.confetti:nth-child(12) { left: 30%; animation-delay: 0.4s; }
+.confetti:nth-child(13) { left: 35%; animation-delay: 0.7s; }
+.confetti:nth-child(14) { left: 39%; animation-delay: 1.0s; }
+.confetti:nth-child(15) { left: 40%; animation-delay: 1.3s; }
+.confetti:nth-child(16) { left: 45%; animation-delay: 1.6s; }
+
+.confetti:nth-child(17)  { left: 50%;  animation-delay: 2.4s; }
+.confetti:nth-child(18)  { left: 55%; animation-delay: 2.6s; }
+.confetti:nth-child(19)  { left: 60%; animation-delay: 0.8s; }
+.confetti:nth-child(20)  { left: 64%; animation-delay: 0.6s; }
+.confetti:nth-child(21)  { left: 69%; animation-delay: 2.9s; }
+.confetti:nth-child(22)  { left: 70%; animation-delay: 3.1s; }
+.confetti:nth-child(23)  { left: 73%; animation-delay: 1.5s; }
+.confetti:nth-child(24)  { left: 78%; animation-delay: 3.8s; }
+.confetti:nth-child(25)  { left: 82%; animation-delay: 4.1s; }
+.confetti:nth-child(26) { left: 84%; animation-delay: 1.4s; }
+.confetti:nth-child(27) { left: 88%; animation-delay: 0.1s; }
+.confetti:nth-child(28) { left: 91%; animation-delay: 5.4s; }
+.confetti:nth-child(29) { left: 94%; animation-delay: 3.7s; }
+.confetti:nth-child(30) { left: 97%; animation-delay: 2.0s; }
+.confetti:nth-child(31) { left: 99%; animation-delay: 7.3s; }
+.confetti:nth-child(32) { left: 33%; animation-delay: 5.6s; }
+/* ...continue up to 40+ if desired... */
+
+
+
+
+
+.r-1{
+     text-align: center;
+   width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+   margin-top:  3%;
+   box-shadow: 2px 2px 100px white;
+color: blanchedalmond;
+background-color: black;
+
+height: 600px;
+
+padding:50px 30px 90px;
+
+
+}
+
+
+
+
+.f-1{
+  width: 80%;
+  max-width: 450px;
+  font-weight: 900;
+  text-align: center;
+  margin: 100px auto 20px auto;
+  
+  border-radius: 15px;
+  background-color: #ff6ec4;
+  padding: 10px 20px;
+  font-size: 24px;
+  color: aqua;
+  display: block;
+  border: none;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+
+ 
+
+
+
+}
+.f-1:hover{
+    background-color:rgb(209, 99, 59);
+ }
+
+
+.fade-text {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+
+.delay-4 { animation-delay: 1s; }
+.f-1 {
+  border-radius: 15px;
+ 
+  
+  background-color: #ff6ec4;
+  padding: 10px 20px;
+  font-size: 30px;
+color: aqua;
+  display: block;
+  border: none;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+ 
+}
+.f-1:hover {
+  background-color: #ff85c1;
+}
+
+/* Button Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 110, 196, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(245, 241, 243, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(152, 117, 138, 0); }
+}
+
+@keyframes slideRight {
+  0%       { transform: translateX(0); }
+  6.66%    { transform: translateX(-100vw); }
+  13.33%   { transform: translateX(-200vw); }
+  20%      { transform: translateX(-300vw); }
+  26.66%   { transform: translateX(-400vw); }
+  33.33%   { transform: translateX(-500vw); }
+  40%      { transform: translateX(-600vw); }
+  46.66%   { transform: translateX(-700vw); }
+  53.33%   { transform: translateX(-800vw); }
+  60%      { transform: translateX(-900vw); }
+  66.66%   { transform: translateX(-1000vw); }
+  73.33%   { transform: translateX(-1100vw); }
+  80%      { transform: translateX(-1200vw); }
+  86.66%   { transform: translateX(-1300vw); }
+  93.33%   { transform: translateX(-1400vw); }
+  100%     { transform: translateX(0); }
+}
+
+
+@keyframes textSlideUp {
+  0% {
+    opacity: 0;
+    transform: translate(box-shadow, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+.f-1  {
+border-radius: 15px;
+  color: rgb(15, 15, 15);
+  background-color: rgb(228, 126, 126);
+ display: block;
+  margin: 20px auto;
+  margin-top: 550px;
+
+
+}
+ .f-1:hover{
+    background-color:rgb(236, 155, 125);
+ }
+.fade-text {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Delays for staggered effect */
+
+.delay-4 { animation-delay: 1s; }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    
+    }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    
+    }
+}
+.y-1  {
+border-radius: 15px;
+  color: rgb(15, 15, 15);
+  background-color: rgb(228, 126, 126);
+ display: block;
+  margin: 20px auto;
+  margin-top: 50px;
+  font-size: 30px;
+border-radius: 15px;
+ 
+  box-shadow:20px 20px 20px #050007;
+  background-color: #ff6ec4;
+  padding: 10px 20px;
+
+}
+ .y-1:hover{
+    background-color:rgb(152, 181, 202);
+ }
+.fade-text {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 4s ease-out forwards;
+}
+
+/* Delays for staggered effect */
+
+.delay- { animation-delay: 1s; }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    
+    }
+}
+@media (max-width: 768px) {
+  .r-1 {
+    width: 90%;
+
+
+    height: 600px;
+    margin: 30px auto;
+    height: auto;
+    padding: 20px;
+   
+
+  }
+    .balloon {
+    width: 30px;
+    height: 45px;
+  }
+  .confetti {
+    width: 5px;
+    height: 15px;
+  }
+  .sparkle, .star {
+    width: 4px;
+    height: 4px;
+  }
+}
+.fixed-btn {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 12px 18px;
+  background-color: #d3d482;
+  color: rgb(10, 10, 10);
+  font-size:30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 10px 10px 10px #000;
+}
+  .f-1 {
+     width: 80%;
+  max-width: 450px;
+  font-weight: 900;
+  text-align: center;
+  margin: 150px auto 20px auto; /* ⬅ Increased margin-top to 150px */
+  border-radius: 15px;
+ 
+}
+    
+  
+  }
+
+  h1.f-1 {
+    font-size: 24px;
+    margin-top: 100px;
+  }
+
+  .fade-text h1 {
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .r-1 h1 {
+    font-size: 20px;
+  }
+
+  .r-1 p {
+    font-size: 16px;
+  }
+
+.y-1  {
+border-radius: 12px;
+  color: rgb(15, 15, 15);
+  background-color: rgb(228, 126, 126);
+  margin-left: 38%;
+  margin-top: 50px;
+ font-size: 2vw;
+  max- font-size: 55px;
+
+
+}
+ .y-1:hover{
+    background-color:rgb(152, 181, 202);
+ }
+.fade-text {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Delays for staggered effect */
+
+.delay-4 { animation-delay: 1s; }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    
+    }
+}
